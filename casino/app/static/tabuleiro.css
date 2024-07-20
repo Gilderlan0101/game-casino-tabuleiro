@@ -1,0 +1,146 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Evitar rolagem horizontal */
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.barra-superior {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.saldo {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    position: relative;
+    right: 30%;
+   top: 80px;
+
+}
+
+/* se user tiver saldo, fica verde; se não, fica vermelho */
+.com_saldo {
+    color: green;
+}
+
+.sem_saldo {
+    color: red;
+}
+
+.tela-roleta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; /* Aumentando o espaçamento entre os slots */
+    margin-bottom: 20px;
+}
+
+.linha {
+    color: rgb(255, 255, 255);
+    font-size: 1em;
+}
+
+.slot {
+    background-color: #000000;
+    border: 2px solid rgb(76, 32, 236);
+    padding: 20px;
+    font-size: 1.2em;
+    text-align: center;
+    border-radius: 10%;
+    margin: 10px auto;
+}
+
+.secao-lateral {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgb(76, 32, 236);
+    padding: 20px;
+    width: 95%;
+    border-radius: 10px;
+    background-color: #000000;
+    margin-bottom: 15px;
+    position: relative;
+    
+    
+}
+
+.mensagens {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: rgb(226, 233, 226);
+}
+
+#titulo {
+    color: green;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    position: relative;
+    
+}
+
+ul#resultados {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#botao-container, #auto {
+    color: green;
+    width: 120px;
+    height: 50px;
+    border: 2px solid rgb(76, 32, 236);
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+    left: 30%;
+    
+}
+
+#valor-aposta {
+    color: #ffffff;
+    background-color: #000000;
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+    border: 2px solid rgb(76, 32, 236);
+    border-radius: 10px;
+}
+
+/* Estilos responsivos para dispositivos móveis */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .slot {
+        padding: 10px;
+        font-size: 1em;
+    }
+
+    .secao-lateral {
+        padding: 10px;
+    }
+
+    #botao-container, #auto {
+        width: 100px;
+        height: 40px;
+        font-size: 0.9em;
+    }
+}

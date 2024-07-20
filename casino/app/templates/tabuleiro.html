@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casino</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='tabuleiro.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="barra-superior">
+            <div class="saldo">
+                Saldo: <span class="{{ 'com_saldo' if saldo >= 10 else 'sem_saldo' }}">{{ saldo }}</span> R$
+            </div>
+            <button id="botao-container">Girar Roleta</button>
+            <button id="auto">AUTO</button>
+            <select id="valor-aposta">
+                <option value="10">10 R$</option>
+                <option value="20">20 R$</option>
+                <option value="50">50 R$</option>
+            </select>
+        </div>
+        <div class="tela-roleta" id="tela-roleta">
+            {% for row in result %}
+                <div class="linha">
+                    {% for slot in row %}
+                        <div class="slot">{{ slot.display }}</div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="secao-lateral">
+            <div class="mensagens">
+                <p id="titulo">Ganhos</p>
+                <ul id="resultados">
+                    {% for item in verific %}
+                        <li>{{ item.display }} {{ item.value }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <audio id="audio" src="path_to_your_audio_file.mp3"></audio>
+    <script src="{{ url_for('static', filename='tabuleiro.js') }}"></script>
+</body>
+</html>
